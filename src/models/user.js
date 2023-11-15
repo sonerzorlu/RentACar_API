@@ -24,3 +24,45 @@ const { mongoose } = require('../configs/dbConnection')
 }
 /* ------------------------------------------------------- */
 // User Model:
+
+const UserSchema = new mongoose.Schema({
+    username:{
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+    },
+    password:{
+        type: String,
+        required: true,
+        unique: true,
+        trim: false,
+    },
+    email:{
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+    },
+    firstName:{
+        type: String,
+        required: true,
+        trim: false,
+    },
+    lastName:{
+        type: String,
+        required: true,
+        trim: false,
+    },
+    isActive:{
+        type: String,
+        required: true,
+        trim: true,
+    },
+    isAdmin:{
+        type: String,
+        required: true,
+        trim: true,
+    }
+
+})
