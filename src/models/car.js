@@ -31,3 +31,50 @@ const { mongoose } = require('../configs/dbConnection')
 }
 /* ------------------------------------------------------- */
 // Car Model:
+
+const carSchema = new mongoose.Schema({
+
+    plateNumber: {
+        type: String,
+        required: true,
+        trim: true,
+        unique: true
+
+    },
+    brand: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    model: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    year: {
+        type: Number,
+        required: true,
+        min: 2000
+    },
+    isAutomatic: {
+        type: Boolean,
+        default: false,
+    },
+    pricePerDay: {
+        type: Number,
+        required: true
+    },
+    isPublish: {
+        type: Boolean,
+        default: true
+    },
+    createdId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    },
+    updatedId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }
+
+},{})
