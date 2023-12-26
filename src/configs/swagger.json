@@ -200,8 +200,8 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted"
+          "200": {
+            "description": "OK"
           }
         }
       },
@@ -217,18 +217,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "createdId": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -285,187 +273,8 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted"
-          }
-        }
-      }
-    },
-    "/tokens/": {
-      "get": {
-        "tags": [
-          "Tokens"
-        ],
-        "summary": "List Tokens",
-        "description": "  You can send query with endpoint for search[], sort[], page and limit.  <ul> Examples:   <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>   <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>   <li>URL/?<b>page=2&limit=1</b></li>  </ul>  ",
-        "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Tokens"
-        ],
-        "summary": "Create Token",
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "userId": {
-                  "type": "string",
-                  "example": "...User.objectId..."
-                },
-                "token": {
-                  "type": "string",
-                  "example": "...tokenKey..."
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      }
-    },
-    "/tokens/{id}": {
-      "get": {
-        "tags": [
-          "Tokens"
-        ],
-        "summary": "Get Single Token",
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Tokens"
-        ],
-        "summary": "Update Token",
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "userId": {
-                  "type": "string",
-                  "example": "...User.objectId..."
-                },
-                "token": {
-                  "type": "string",
-                  "example": "...tokenKey..."
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "Accepted"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Tokens"
-        ],
-        "summary": "Delete Token",
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "createdId": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      },
-      "patch": {
-        "tags": [
-          "Tokens"
-        ],
-        "summary": "Update Token",
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "userId": {
-                  "type": "string",
-                  "example": "...User.objectId..."
-                },
-                "token": {
-                  "type": "string",
-                  "example": "...tokenKey..."
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "Accepted"
           }
         }
       }
@@ -495,7 +304,8 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Car"
+              "type": "object",
+              "properties": {}
             }
           }
         ],
@@ -545,13 +355,14 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Car"
+              "type": "object",
+              "properties": {}
             }
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted"
+          "200": {
+            "description": "OK"
           }
         }
       },
@@ -567,18 +378,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "createdId": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -608,13 +407,14 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Car"
+              "type": "object",
+              "properties": {}
             }
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted"
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -644,7 +444,8 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Reservation"
+              "type": "object",
+              "properties": {}
             }
           }
         ],
@@ -694,13 +495,14 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Reservation"
+              "type": "object",
+              "properties": {}
             }
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted"
+          "200": {
+            "description": "OK"
           }
         }
       },
@@ -716,18 +518,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "createdId": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -757,13 +547,14 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Reservation"
+              "type": "object",
+              "properties": {}
             }
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted"
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -784,24 +575,12 @@
               "example": true
             },
             "required": {
-              "type": "array",
-              "example": [
-                true,
-                "Username field must be required."
-              ],
-              "items": {
-                "type": "string"
-              }
+              "type": "boolean",
+              "example": true
             },
             "unique": {
-              "type": "array",
-              "example": [
-                true,
-                "There is this Username. Username field must be unique."
-              ],
-              "items": {
-                "type": "string"
-              }
+              "type": "boolean",
+              "example": true
             }
           }
         },
@@ -832,24 +611,12 @@
               "example": true
             },
             "required": {
-              "type": "array",
-              "example": [
-                true,
-                "Email field must be required."
-              ],
-              "items": {
-                "type": "string"
-              }
+              "type": "boolean",
+              "example": true
             },
             "unique": {
-              "type": "array",
-              "example": [
-                true,
-                "There is this Email. Email field must be unique."
-              ],
-              "items": {
-                "type": "string"
-              }
+              "type": "boolean",
+              "example": true
             }
           }
         },
@@ -975,6 +742,10 @@
             "required": {
               "type": "boolean",
               "example": true
+            },
+            "min": {
+              "type": "number",
+              "example": 2000
             }
           }
         },
@@ -1100,22 +871,6 @@
           "properties": {
             "type": {
               "type": "function"
-            },
-            "required": {
-              "type": "boolean",
-              "example": true
-            }
-          }
-        },
-        "createdId": {
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "function"
-            },
-            "ref": {
-              "type": "string",
-              "example": "User"
             },
             "required": {
               "type": "boolean",
